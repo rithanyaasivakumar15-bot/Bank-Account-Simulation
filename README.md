@@ -27,19 +27,19 @@ Technologies Used
 
 Project Structure
 
-Bank-Account-Simulation/
+Bank-Account-Simulation/                                                                                                                                                                                            
 ├── server.py                                                                                                                                                                                                      
-├── static/
-│   └── style.css
-├── templates/
-│   ├── index.html
-│   ├── login.html
-│   ├── create.html
-│   ├── deposit.html
-│   ├── withdraw.html
-│   ├── enquiry.html
-│   └── history.html
-└── README.md
+├── static/                                                                                                                                                                                                         
+│   └── style.css                                                                                                                                                                                                   
+├── templates/                                                                                                                                                                                                      
+│   ├── index.html                                                                                                                                                                                                  
+│   ├── login.html                                                                                                                                                                                                  
+│   ├── create.html                                                                                                                                                                                                 
+│   ├── deposit.html                                                                                                                                                                                                
+│   ├── withdraw.html                                                                                                                                                                                               
+│   ├── enquiry.html                                                                                                                                                                                                
+│   └── history.html                                                                                                                                                                                                
+└── README.md                                                                                                                                                                                                       
 
 How to Run
 
