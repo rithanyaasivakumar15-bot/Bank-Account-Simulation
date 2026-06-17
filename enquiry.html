@@ -1,0 +1,41 @@
+<nav style="background-color: #003366; height: 70px; display: flex; justify-content: space-between; align-items: center; padding: 0 5%; width: 100%; box-sizing: border-box;">
+    <div style="color: #5dade2; font-size: 24px; font-weight: 800; letter-spacing: 1px;">BDB</div>
+    <div style="display: flex; gap: 25px;">
+        <a href="/" style="color: white; text-decoration: none; font-weight: 500; font-size: 14px; text-transform: uppercase;">Home</a>
+    </div>
+</nav>
+
+<header style="padding: 40px 10% 10px; text-align: center; background: #ffffff;">
+    <h1 style="color: #003366; margin: 0; font-size: 32px; font-weight: 800;">Account Dashboard</h1>
+    <p style="color: #666; margin-top: 8px; font-size: 14px;">Securely manage your funds and account details.</p>
+</header>
+
+<main style="padding: 20px 10%; max-width: 900px; margin: 0 auto;">
+    
+    <div style="background: #ffffff; padding: 30px; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.06); border-left: 6px solid #003366; margin-bottom: 30px;">
+        <div style="margin-bottom: 25px;">
+            <p style="margin: 0; color: #999; font-size: 12px; text-transform: uppercase; letter-spacing: 1px;">Welcome back,</p>
+            <h2 style="margin: 5px 0; color: #003366; font-size: 26px;">{{ user.name }}</h2>
+        </div>
+        
+        <div style="display: flex; justify-content: space-between; align-items: flex-end; border-top: 1px solid #f0f0f0; padding-top: 20px;">
+            <div>
+                <p style="margin: 0; color: #999; font-size: 11px; font-weight: 700;">ACCOUNT NUMBER</p>
+                <p style="font-family: monospace; font-size: 18px; color: #2c3e50; margin: 5px 0;">{{ acc_no }}</p>
+            </div>
+            <div style="text-align: right;">
+                <p style="margin: 0; color: #999; font-size: 11px; font-weight: 700;">AVAILABLE BALANCE</p>
+                <p style="font-size: 28px; font-weight: 800; color: #2ecc71; margin: 5px 0;">₹{{ user.balance }}</p>
+            </div>
+        </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+        <a href="/deposit_page" style="background: #2ecc71; color: white; text-align: center; text-decoration: none; padding: 16px; border-radius: 8px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; box-shadow: 0 4px 12px rgba(46, 204, 113, 0.2);">
+            Deposit
+        </a>
+        <a href="/withdraw_page" style="background: #e74c3c; color: white; text-align: center; text-decoration: none; padding: 16px; border-radius: 8px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; box-shadow: 0 4px 12px rgba(231, 76, 60, 0.2);">
+            Withdraw
+        </a>
+    </div>
+</main>

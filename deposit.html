@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Deposit - BDB</title>
+</head>
+<body>
+    <nav class="navbar"><div class="nav-logo">BDB</div><ul class="nav-links"><li><a href="/">Home</a></li></ul></nav>
+    
+    <div class="container" style="margin-top: 100px;">
+        <div style="text-align: center; margin-bottom: 25px;">
+            <h2 style="color: #003366;">Deposit Funds</h2>
+            <p style="color: #7f8c8d; font-size: 14px;">Add money to your secure BDB wallet</p>
+        </div>
+
+        <form action="/deposit" method="POST">
+            <label style="font-size: 12px; font-weight: bold; color: #003366;">AMOUNT (₹)</label>
+            <input type="number" name="amount" placeholder="Enter amount to deposit" min="1" step="0.01" required>
+            
+            <button type="submit" style="background-color: #2ecc71; margin-top: 20px; box-shadow: 0 4px 15px rgba(46,204,113,0.2);">
+                Confirm Deposit
+            </button>
+        </form>
+        
+        <div style="text-align: center; margin-top: 20px;">
+            <a href="/" style="color: #7f8c8d; text-decoration: none; font-size: 14px;">Cancel and Return</a>
+        </div>
+    </div>
+</body>
+</html>

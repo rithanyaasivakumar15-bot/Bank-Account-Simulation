@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BDB | Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-logo">BDB | BENGALURU</div>
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/create_page">Open Account</a></li>
+        </ul>
+    </nav>
+
+    <div class="login-container" style="max-width: 400px; margin: 80px auto; padding: 30px; border: 1px solid #ddd; border-radius: 12px; background: white; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+        <h2 style="text-align: center; color: #2d3436; margin-bottom: 20px;">Access Your Portal</h2>
+        
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <div style="background: #fff0f0; padding: 12px; border: 1px solid #ff7675; color: #d63031; margin-bottom: 20px; border-radius: 6px; text-align: center; font-size: 0.9em;">
+                    {{ messages[-1] }}
+                </div>
+            {% endif %}
+        {% endwith %}
+
+        <form action="/login" method="POST">
+            <div style="margin-bottom: 15px;">
+                <label style="display: block; margin-bottom: 5px; color: #636e72;">Account Number</label>
+                <input type="text" name="acc_no" placeholder="Account number" required style="width: 100%; padding: 12px; border: 1px solid #dfe6e9; border-radius: 6px; box-sizing: border-box;">
+            </div>
+            <div style="margin-bottom: 20px;">
+                <label style="display: block; margin-bottom: 5px; color: #636e72;">PIN</label>
+                <input type="password" name="pin" placeholder="PIN" required style="width: 100%; padding: 12px; border: 1px solid #dfe6e9; border-radius: 6px; box-sizing: border-box;">
+            </div>
+            <button type="submit" class="cta-button primary-cta" style="width: 100%; padding: 12px; cursor: pointer; border: none;">Login to Secure Portal</button>
+        </form>
+        
+        <p style="text-align: center; margin-top: 20px; color: #636e72; font-size: 0.9em;">
+            Don't have an account? <a href="/create_page" style="color: #3498db; text-decoration: none; font-weight: bold;">Open one here</a>
+        </p>
+    </div>
+</body>
+</html>
