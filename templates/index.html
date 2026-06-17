@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BDB | Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-logo">BDB | BENGALURU</div>
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            {% if session.get('user') %}
+                <li><a href="/deposit_page">Deposit</a></li>
+                <li><a href="/withdraw_page">Withdraw</a></li>
+                <li><a href="/enquiry_page">Enquiry</a></li>
+                <li><a href="/history">History</a></li>
+                <li><a href="/logout" style="color: #ff7675;">Logout</a></li>
+            {% else %}
+                <li><a href="/login">Login</a></li>
+                <li><a href="/create_page">Open Account</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+
+    <header class="hero" style="padding-bottom: 110px; position: relative; z-index: 1;">
+        {% if session.get('user') %}
+            <h1>Welcome Back, {{ user.name if user else 'Valued Member' }}!</h1>
+            <p>Your Bengaluru Digital Bank dashboard is ready.</p>
+        {% else %}
+            <h1>Banking Built for the Future.</h1>
+            <p>Experience seamless, secure, and lightning-fast digital banking in India's Silicon Valley.</p>
+        {% endif %}
+
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            <div class="alert-container" style="margin: 20px 0; position: relative; z-index: 30;">
+                <div class="alert" style="background: rgba(232, 244, 253, 0.95); padding: 12px 30px; border-radius: 8px; border: 1px solid #3498db; color: #2980b9; display: inline-block; box-shadow: 0 4px 15px rgba(0,0,0,0.2); font-weight: 500;">
+                    {{ messages[-1] }}
+                </div>
+            </div>
+            {% endif %}
+        {% endwith %}
+
+        <div class="btn-group" style="position: relative; z-index: 20; margin-top: 10px;">
+            {% if session.get('user') %}
+                <a href="/enquiry_page" class="cta-button primary-cta">Check Balance</a>
+            {% else %}
+                <a href="/login" class="cta-button primary-cta">Access Portal</a>
+                <a href="/create_page" class="cta-button secondary-cta">Open an Account</a>
+            {% endif %}
+        </div>
+    </header>
+
+    <section class="features" style="margin-top: -50px; position: relative; z-index: 10; padding-top: 0;">
+        <div class="feature-card">
+            <h3>Zero-Fee Digital Accounts</h3>
+            <p>Enjoy premium banking without the hidden costs. No monthly maintenance fees for students and young professionals.</p>
+        </div>
+        <div class="feature-card">
+            <h3>Silicon Valley Tech</h3>
+            <p>Built with enterprise-grade encryption to ensure your funds and data remain protected 24/7.</p>
+        </div>
+        <div class="feature-card">
+            <h3>Instant Transfers</h3>
+            <p>Experience real-time deposits and withdrawals within the BDB ecosystem instantly.</p>
+        </div>
+    </section>
+
+</body>
+</html>

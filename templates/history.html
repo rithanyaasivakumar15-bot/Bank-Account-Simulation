@@ -1,0 +1,24 @@
+<nav style="background-color: #003366; height: 70px; display: flex; justify-content: space-between; align-items: center; padding: 0 5%; width: 100%; box-sizing: border-box;">
+    <div style="color: #5dade2; font-size: 24px; font-weight: 800; letter-spacing: 1px;">BDB</div>
+    <div style="display: flex; gap: 25px;">
+        <a href="/" style="color: white; text-decoration: none; font-weight: 500; font-size: 14px; text-transform: uppercase;">Home</a>
+    </div>
+</nav>
+
+<header style="padding: 40px 10% 20px; text-align: center;">
+    <h1 style="color: #003366; margin: 0; font-size: 32px;">Transaction History</h1>
+</header>
+
+<main style="padding: 20px 10%; max-width: 900px; margin: 0 auto;">
+    <div style="display: flex; flex-direction: column; gap: 15px;">
+        {% for item in history %}
+            <div style="background: white; padding: 20px; border-radius: 12px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 12px rgba(0,0,0,0.05); border-left: 5px solid #003366;">
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <div style="background: #eef6fc; color: #003366; width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold;">₹</div>
+                    <strong style="color: #003366;">{{ item }}</strong>
+                </div>
+                <span style="background: #e8f5e9; color: #2ecc71; padding: 5px 12px; border-radius: 4px; font-size: 11px; font-weight: 800;">✓ DEBITED</span>
+            </div>
+        {% endfor %}
+    </div>
+</main>
