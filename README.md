@@ -28,7 +28,6 @@ Technologies Used
 Project Structure
 
 Bank-Account-Simulation/
-│
 ├── server.py
 ├── static/
 │   └── style.css
